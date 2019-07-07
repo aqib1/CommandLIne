@@ -5,5 +5,5 @@ import java.util.List;
 
 public interface ITextHelper {
 
-	List<TextSearchResponse> calculateTextPercent(File f) throws IllegalArgumentException;
+	List<TextSearchResponse> calculateTextPercent(File f, String searchCriteria) throws IllegalArgumentException, InterruptedException;
 }

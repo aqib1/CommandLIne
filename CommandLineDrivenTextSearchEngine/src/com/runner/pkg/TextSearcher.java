@@ -17,7 +17,7 @@ public class TextSearcher {
 
 	}
 
-	private int totalWordsInAText(String text) {
+	private double totalWordsInAText(String text) {
 		String[] words = text.split("\\s+");
 		return words.length;
 	}
@@ -43,13 +43,13 @@ public class TextSearcher {
 	}
 
 	public TextSearcher searchCriteria(String searchCriteria) {
-		int totalWords = totalWordsInAText(data.toString());
-		int totalWordsOfSearchCriteria = totalWordsInAText(searchCriteria);
-		int searchCount = getCountBySearchCriteria(data.toString(), searchCriteria);
+		double totalWords = totalWordsInAText(data.toString());
+		double totalWordsOfSearchCriteria = totalWordsInAText(searchCriteria);
+		double searchCount = getCountBySearchCriteria(data.toString(), searchCriteria);
 		if (totalWordsOfSearchCriteria > 1) {
 			totalWords -= totalWordsOfSearchCriteria;
 		}
-		persentageWord = totalWords * (searchCount * 0.01);
+		persentageWord =  ((double)(searchCount / totalWords)) * 100;
 		return textSearcher;
 	}
 
@@ -59,7 +59,6 @@ public class TextSearcher {
 		while ((fromIndex = data.indexOf(searchCriteria, fromIndex)) != -1) {
 			count++;
 			fromIndex++;
-
 		}
 		return count;
 	}

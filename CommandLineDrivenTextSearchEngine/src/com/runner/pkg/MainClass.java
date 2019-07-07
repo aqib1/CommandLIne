@@ -1,6 +1,7 @@
 package com.runner.pkg;
 
 import java.io.File;
+import java.util.List;
 import java.util.Scanner;
 
 public class MainClass {
@@ -11,19 +12,19 @@ public class MainClass {
 //		}
 		
 		
-//		final File indexableDirectory = new File(args[0]);
-//		// TODO: Index all files in indexableDirectory
-//		try (Scanner keyboard = new Scanner(System.in)) {
-//			while (true) {
-//				System.out.print("search> ");
-//				final String line = keyboard.nextLine();
-//				System.out.println(line);
-//				
-//				
-//				if(line.equalsIgnoreCase(":quit"))
-//					break;
-//			}
-//		}
+		final File indexableDirectory = new File("C:\\Users\\AQIB JAVED\\Desktop\\show");
+		try (Scanner keyboard = new Scanner(System.in)) {
+			while (true) {
+				System.out.print("search> ");
+				final String line = keyboard.nextLine();
+				List<TextSearchResponse> response = ITextHelperBusiness.getInstance().calculateTextPercent(indexableDirectory, line);
+				System.out.println(response);
+				if(line.equalsIgnoreCase(":quit"))
+					break;
+			}
+		} catch (IllegalArgumentException | InterruptedException e) {
+			e.printStackTrace();
+		}
 		System.out.println("$ - End program");
 	}
 
