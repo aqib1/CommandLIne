@@ -13,6 +13,7 @@ public class TextSearcher {
 	private static TextSearcher textSearcher = null;
 	private StringBuffer data = new StringBuffer();
 	private double persentageWord = 0;
+
 	private TextSearcher() {
 
 	}
@@ -21,7 +22,7 @@ public class TextSearcher {
 		String[] words = text.split("\\s+");
 		return words.length;
 	}
-	
+
 	public double getPersentageWord() {
 		return persentageWord;
 	}
@@ -30,7 +31,7 @@ public class TextSearcher {
 		if (f.exists()) {
 			try (BufferedReader reader = new BufferedReader(new FileReader(f))) {
 				String line;
-				while((line=reader.readLine())!= null) {
+				while ((line = reader.readLine()) != null) {
 					data.append(line);
 				}
 			} catch (FileNotFoundException e) {
@@ -44,12 +45,12 @@ public class TextSearcher {
 
 	public TextSearcher searchCriteria(String searchCriteria) {
 		double totalWords = totalWordsInAText(data.toString());
-		double totalWordsOfSearchCriteria = totalWordsInAText(searchCriteria);
+		// double totalWordsOfSearchCriteria = totalWordsInAText(searchCriteria);
 		double searchCount = getCountBySearchCriteria(data.toString(), searchCriteria);
-		if (totalWordsOfSearchCriteria > 1) {
-			totalWords -= totalWordsOfSearchCriteria;
-		}
-		persentageWord =  ((double)(searchCount / totalWords)) * 100;
+		// if (totalWordsOfSearchCriteria > 1) {
+		// totalWords -= totalWordsOfSearchCriteria;
+		// }
+		persentageWord = ((double) (searchCount / totalWords)) * 100;
 		return textSearcher;
 	}
 
