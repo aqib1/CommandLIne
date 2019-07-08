@@ -1,3 +1,20 @@
+To run this application you can use, you can also build jar which is in libs folder.
+or you can checkout code from github repository (i make it public)
+and run that using eclipse IDE, you need to file name in jvm argument so that 
+it can be fatched in main method.
+
+if you want to run build jar.
+
+java​ -cp ​TextSearch​.jar ​com.runner.pkg.MainClass​ <path of directory> 
+
+
+
+
+
+
+
+
+
 Back-End Coding Exercise 
 
 The exercise is to write a command line driven text search engine in the language you feel most
