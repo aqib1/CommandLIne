@@ -1,4 +1,4 @@
-Back-End Coding Exercise — 2–3 hours
+Back-End Coding Exercise 
 
 The exercise is to write a command line driven text search engine in the language you feel most
 comfortable with.
