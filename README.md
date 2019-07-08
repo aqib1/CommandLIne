@@ -1,4 +1,4 @@
-To run this application you can use, you can also build jar which is in libs folder.
+To run this application you can use, you can also build jar (TextSearch.jar) which is in libs folder.
 or you can checkout code from github repository (i make it public)
 and run that using eclipse IDE, you need to file name in jvm argument so that 
 it can be fatched in main method.
