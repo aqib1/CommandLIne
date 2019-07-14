@@ -28,7 +28,7 @@ public class ITextHelperBusiness implements ITextHelper {
 		if (Objects.isNull(files))
 			throw new IllegalArgumentException("file is not in the valid format");
 
-		for (File f : files)
+		for (File f : files) {
 			t1 = new Thread(new Runnable() {
 				@Override
 				public void run() {
@@ -41,6 +41,7 @@ public class ITextHelperBusiness implements ITextHelper {
 			});
 		t1.start();
 		t1.join();
+	   }
 		return response;
 	}
 
